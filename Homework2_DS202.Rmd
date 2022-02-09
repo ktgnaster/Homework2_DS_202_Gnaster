@@ -35,8 +35,10 @@ Please use Github to collaborate on this problem. For example, one member can cr
 library(ggplot2)
 gap = read.csv("gapminder-5060.csv")
 xCan = subset(gap, country == "Canada")
+xUs = subset(gap, country == "United States")
+xAus = subset(gap, country == "Australia")
 xCan[2,4] = 69.96
-gap_2 = rbind(xCan)
+gap_2 = rbind(xCan,xUs,xAus)
 ggplot(data=gap_2, aes(y=lifeExp, x = gdpPercap,  group=country, color = country)) +
   geom_line()
 ```
